@@ -61,3 +61,17 @@ function user(m) {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
+bot("👋 Hola, ¿quieres que te ayude a trazar tu ruta? (sí / no)");
+
+function send() {
+    let i = document.getElementById("msg");
+    const t = i.value.trim().toLowerCase();
+    if (!t) return;
+    
+    user(i.value.trim());
+    i.value = "";
+    
+    setTimeout(() => handleChat(t), 600);
+
+}
+
