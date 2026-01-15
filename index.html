@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>APRE-Traxión | Asistente de Planeación de Rutas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <h1>APRE-Traxión</h1>
+            <p>Asistente de Planeación de Rutas Estandarizadas · Análisis operativo con validación humana</p>
+        </div>
+
+        <div class="grid">
+
+        <!-- COLUMNA IZQUIERDA -->
+            <div>
+                <div class="card">
+                    <h2>📥 Registro Operativo</h2>
+                    <label>Tipo de Operación</label>
+                    <select><option>Distribución Urbana</option><option>Ruta Foránea</option></select>
+                    <label>Zona / Ruta</label>
+                    <input placeholder="CDMX – Edo. México">
+                    <label>Ventana de Entrega</label>
+                    <input placeholder="09:00 – 17:00 hrs">
+                    <label>Unidad</label>
+                    <select><option>Torton</option><option>Camioneta 3.5</option></select>
+                    <label>Descripción</label>
+                    <textarea placeholder="Ruta pasa por Periférico en horario pico..."></textarea>
+                </div>
 </body>
 </html>
+
+
+
