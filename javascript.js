@@ -59,5 +59,10 @@ function send() {
 }
 
 function handleChat(t) {
-    
+
+    if (t.includes("ayuda") || t.includes("que puedes hacer")) {
+    bot("💡 Puedo ayudarte con:\n• Planear rutas de origen a destino\n• Información de clima y tráfico\n• Optimizar tus paradas\n• Calcular distancias\n• Sugerencias de vehículos\n¿Qué necesitas?");
+    return;
+}
+
 }
