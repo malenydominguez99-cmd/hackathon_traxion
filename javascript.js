@@ -44,3 +44,20 @@ map.on('click', e => {
 let chatState = "INIT";
 let viaje = { origen: "", destino: "" };
 const chatContainer = document.getElementById("chat");
+
+function bot(m) {
+    let d = document.createElement("div");
+    d.className = "msg bot";
+    d.textContent = m;
+    chatContainer.appendChild(d);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function user(m) {
+    let d = document.createElement("div");
+    d.className = "msg user";
+    d.textContent = m;
+    chatContainer.appendChild(d);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
