@@ -123,4 +123,26 @@ if (t.includes("gasolina") || t.includes("combustible") || t.includes("costo")) 
     return;
 }
 
+
+if (t.includes("consejos") || t.includes("tips") || t.includes("recomendaciones")) {
+    const tips = [
+        "💡 Agrupa entregas en la misma zona para ahorrar tiempo.",
+        "💡 Las paradas de alta prioridad se optimizan primero.",
+        "💡 Revisa el tráfico antes de salir.",
+        "💡 Planea descansos en rutas largas."
+    ];
+    bot(tips[Math.floor(Math.random() * tips.length)]);
+    return;
+}
+
+if (t.includes("gracias") || t.includes("genial") || t.includes("perfecto")) {
+    bot("😊 ¡De nada! Estoy aquí para ayudarte.");
+    return;
+}
+
+if (t.includes("adios") || t.includes("adiós") || t.includes("chao") || t.includes("hasta luego")) {
+    bot("👋 ¡Hasta pronto! Buen viaje.");
+    return;
+}
+
 }
