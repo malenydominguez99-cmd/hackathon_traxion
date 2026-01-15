@@ -40,3 +40,7 @@ map.on('click', e => {
             ((points.length - 1) * 5).toFixed(1) + " km";
     }
 });
+
+let chatState = "INIT";
+let viaje = { origen: "", destino: "" };
+const chatContainer = document.getElementById("chat");
