@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APRE-Traxión | Asistente de Planeación de Rutas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>APRE-Traxión</h1>
+            <p>Asistente de Planeación de Rutas Estandarizadas · Análisis operativo con validación humana</p>
+        </div>
+
+        <div class="grid">
+
+        <!-- COLUMNA IZQUIERDA -->
+            <div>
+                <div class="card">
+                    <h2>📥 Registro Operativo</h2>
+                    <label>Tipo de Operación</label>
+                    <select><option>Distribución Urbana</option><option>Ruta Foránea</option></select>
+                    <label>Zona / Ruta</label>
+                    <input placeholder="CDMX – Edo. México">
+                    <label>Ventana de Entrega</label>
+                    <input placeholder="09:00 – 17:00 hrs">
+                    <label>Unidad</label>
+                    <select><option>Torton</option><option>Camioneta 3.5</option></select>
+                    <label>Descripción</label>
+                    <textarea placeholder="Ruta pasa por Periférico en horario pico..."></textarea>
+                </div>
+                <div class="card">
+                    <h2>📊 Métricas Operativas</h2>
+                    <div class="stats">
+                    <div class="stat"><div id="stops">0</div><small>Paradas</small></div>
+                    <div class="stat"><div id="distance">27 km</div><small>Distancia</small></div>
+                    <div class="stat"><div>1</div><small>Ruta</small></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🗺️ Visualización de Ruta</h2>
+                <div id="map"></div>
+            </div>
+        </div>
+        <!-- COLUMNA DERECHA -->
+            <div>
+
+                <div class="card">
+                <h2>📤 Análisis del Agente</h2>
+                <span class="badge">Riesgo: Medio</span>
+
+                    <div class="analysis">
+                    <b>Diagnóstico</b>
+                    <ul>
+                    <li>Congestión histórica en horario pico</li>
+                    <li>Exceso de paradas por unidad</li>
+                    </ul>
+                    </div>
+
+                    <div class="analysis">
+                    <b>Acciones sugeridas</b>
+                    <ul>
+                    <li>Atender prioridades primero</li>
+                    <li>Evitar Periférico 7–10 am</li>
+                    <li>Dividir en dos tramos</li>
+                    </ul>
+                    </div>
+                
+                <small>⚠️ Requiere validación del planificador</small>
+                </div>
+
+
+                <div class="card chat">
+                    <h2>🤖 Asistente Operativo</h2>
+                    <div class="chat-messages" id="chat"></div>
+                        <div class="chat-input">
+                        <input id="msg" placeholder="Escribe tu mensaje..." onkeypress="if(event.key==='Enter')send()">
+                        <button onclick="send()">Enviar</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
