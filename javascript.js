@@ -75,4 +75,26 @@ function handleChat(t) {
     );
     return;
   }
+
+  if (t.includes("vehiculo") || t.includes("vehículo") || t.includes("camion") || t.includes("camión")) {
+    bot(`🚛 Vehículo recomendado basado en tu ruta. ${points.length > 0 ? 'Con ' + points.length + ' paradas, considera un vehículo de carga media.' : 'Agrega paradas para una mejor recomendación.'}`);
+    return;
+}
+
+if (t.includes("distancia") || t.includes("kilometros") || t.includes("kilómetros")) {
+    const dist = document.getElementById('distance').textContent;
+    bot(`📏 Distancia total de tu ruta: ${dist}. ${points.length > 1 ? 'Tiempo estimado: ' + (points.length * 12) + ' minutos.' : 'Agrega más paradas para calcular.'}`);
+    return;
+}
+
+if (t.includes("paradas") || t.includes("cuantas")) {
+    bot(`📍 Tienes ${points.length} parada${points.length !== 1 ? 's' : ''} agregada${points.length !== 1 ? 's' : ''}. ${points.length === 0 ? 'Haz clic en el mapa para agregar.' : '¿Deseas optimizar la ruta?'}`);
+    return;
+}
+
+if (t.includes("tiempo") || t.includes("duracion") || t.includes("duración")) {
+    const tiempo = points.length * 12;
+    bot(`⏱️ Tiempo estimado de ruta: ${tiempo} minutos (${points.length} paradas × 12 min promedio).`);
+    return;
+}
 }
