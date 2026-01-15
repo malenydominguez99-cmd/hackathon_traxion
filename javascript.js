@@ -97,4 +97,30 @@ if (t.includes("tiempo") || t.includes("duracion") || t.includes("duración")) {
     bot(`⏱️ Tiempo estimado de ruta: ${tiempo} minutos (${points.length} paradas × 12 min promedio).`);
     return;
 }
+
+if (t.includes("optimizar") || t.includes("mejorar")) {
+    if (points.length < 2) {
+        bot("⚠️ Necesitas al menos 2 paradas para optimizar. Agrega más ubicaciones.");
+    } else {
+        bot("✨ Analizando tu ruta... Las paradas se reorganizarán de forma eficiente según prioridad y distancia.");
+    }
+    return;
+}
+
+if (t.includes("limpiar") || t.includes("borrar") || t.includes("eliminar")) {
+    bot("🗑️ Para limpiar la ruta, recarga la página o continúa agregando nuevas paradas.");
+    return;
+}
+
+if (t.includes("gasolina") || t.includes("combustible") || t.includes("costo")) {
+    const dist = parseFloat(document.getElementById('distance').textContent);
+    if (dist > 0) {
+        const costoEstimado = (dist * 2.5).toFixed(2);
+        bot(`⛽ Costo estimado de combustible: $${costoEstimado} MXN.`);
+    } else {
+        bot("⛽ Agrega paradas para calcular el costo de combustible.");
+    }
+    return;
+}
+
 }
